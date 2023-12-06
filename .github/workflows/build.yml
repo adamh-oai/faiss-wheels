@@ -36,23 +36,23 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest]
+        os: [ubuntu-latest] #, macos-latest]
         arch: [auto64]
         gpu: [OFF]
         opt_level: [avx2]
-        include:
-          - os: windows-latest
-            arch: auto64
-            gpu: OFF
-            opt_level: generic
-          - os: ubuntu-latest
-            arch: aarch64
-            gpu: OFF
-            opt_level: generic
-          - os: macos-latest
-            arch: arm64
-            gpu: OFF
-            opt_level: generic
+#       include:
+#          - os: windows-latest
+#            arch: auto64
+#            gpu: OFF
+#            opt_level: generic
+#          - os: ubuntu-latest
+#            arch: aarch64
+#            gpu: OFF
+#            opt_level: generic
+#          - os: macos-latest
+#            arch: arm64
+#            gpu: OFF
+#            opt_level: generic
 
     steps:
       - uses: actions/checkout@v3
