@@ -21,8 +21,8 @@ jobs:
       - uses: actions/setup-python@v3
         with:
           python-version: "3.x"
-      - name: Apply patch
-        run: cd faiss && git apply ../patch/faiss-rename-swigfaiss.patch && cd ..
+      - name: Apply patches
+        run: (cd faiss && git apply ../patch/faiss-rename-swigfaiss.patch && git apply ../patch/py312-use-packaging.patch)
       - name: install build
         run: pip install build
       - name: Build sdist
